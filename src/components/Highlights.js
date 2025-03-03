@@ -6,7 +6,8 @@ import { VscChevronRight, VscChevronLeft } from "react-icons/vsc";
 const projects = [
   {
     title: "CLRMS - Course Learning Resource Management System",
-    description: "CLRMS is a comprehensive web-based solution that streamlines the management of academic resources, enhancing efficiency, transparency, and collaboration within educational institutions.",
+    description:
+      "CLRMS is a comprehensive web-based solution that streamlines the management of academic resources, enhancing efficiency, transparency, and collaboration within educational institutions.",
     images: [
       require("../assets/images/clrms-landing.png"),
       require("../assets/images/clrms-services.png"),
@@ -15,14 +16,12 @@ const projects = [
     ],
   },
   {
-    title: "Gold Sage",
-    description: "An AI powered gold price prediction website.",
+    title: "E-Learning Platform",
+    description: "An online education platform like udemy, coursera etc.",
     images: [
-      require("../assets/images/gold-sage-landing.jpg"),
-      require("../assets/images/gold-sage-about.jpg"),
-      require("../assets/images/gold-sage-signin.jpg"),
-      require("../assets/images/gold-sage-predict.jpg"),
-      require("../assets/images/gold-sage-price.jpg"),
+      require("../assets/images/E-learning-landing.png"),
+      require("../assets/images/E-Learning-Courses.png"),
+      require("../assets/images/E-learning-content.png"),
     ],
   },
 ];
@@ -88,7 +87,9 @@ export default function Highlights() {
             {currentProject.images.length > 0 ? (
               <img
                 src={currentProject.images[currentImageIndex]}
-                alt={`Image ${currentImageIndex + 1} of ${currentProject.title}`}
+                alt={`Image ${currentImageIndex + 1} of ${
+                  currentProject.title
+                }`}
                 className="w-auto h-auto object-cover rounded-md"
               />
             ) : (
@@ -117,6 +118,7 @@ export default function Highlights() {
         <div className="project-controls mt-6 flex justify-center gap-4">
           <button
             onClick={handlePrevProject}
+            title="Previous Project"
             className="px-4 py-2 bg-slate-800 rounded-md hover:bg-slate-800"
             aria-label="Previous Project"
           >
@@ -124,6 +126,7 @@ export default function Highlights() {
           </button>
           <button
             onClick={handleNextProject}
+            title="Next Project"
             className="px-4 py-2 bg-slate-800 rounded-md hover:bg-slate-800"
             aria-label="Next Project"
           >

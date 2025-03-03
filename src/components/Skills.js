@@ -1,6 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import { FaCode, FaHtml5, FaCss3Alt,  FaReact, FaNodeJs, FaDatabase, FaTools, FaMicrosoft, FaLaptopCode, FaCogs,  FaBrain, FaPhp, FaLaravel, FaTree, FaChartLine, FaPaintBrush} from 'react-icons/fa'; // Import relevant react-icons
-import { FaMicrochip,  FaPencil,  FaSquareJs } from 'react-icons/fa6';
+import React, { useState, useEffect } from "react";
+import {
+  FaCode,
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaTools,
+  FaMicrosoft,
+  FaLaptopCode,
+  FaCogs,
+  FaBrain,
+  FaPhp,
+  FaLaravel,
+  FaTree,
+  FaChartLine,
+  FaPaintBrush,
+  FaServer,
+  FaFire,
+} from "react-icons/fa"; // Import relevant react-icons
+import { FaMicrochip, FaPencil, FaSquareJs } from "react-icons/fa6";
 import mysqlIcon from "../assets/icons/mysql.png";
 import oracleIcon from "../assets/icons/oracle.png";
 import adobeXDIcon from "../assets/icons/adobeXD.png";
@@ -11,11 +30,15 @@ import tailwindIcon from "../assets/icons/tailwind.png";
 import wordIcon from "../assets/icons/word.png";
 import excelIcon from "../assets/icons/excel.png";
 import powerpointIcon from "../assets/icons/powerpoint.png";
-import mongodbIcon from "../assets/icons/mongodb.png"; 
+import mongodbIcon from "../assets/icons/mongodb.png";
 import figmaIcon from "../assets/icons/figma.png";
 import pythonIcon from "../assets/icons/python.png";
 import vscodeIcon from "../assets/icons/vscode.png";
-
+import expressIcon from "../assets/icons/images.png";
+import postgresIcon from "../assets/icons/postgresql-icon.png";
+import typescriptIcon from "../assets/icons/typescript.png";
+import cursorIcon from "../assets/icons/cursor.jpeg";
+import firebaseIcon from "../assets/icons/firebase.png";
 const Skills = () => {
   const [visibleSections, setVisibleSections] = useState({
     programming: false,
@@ -82,6 +105,14 @@ const Skills = () => {
                 <p>JavaScript</p>
               </li>
               <li className="text-center">
+                <img
+                  src={typescriptIcon}
+                  alt="Typescript"
+                  className="w-10 h-10 mx-auto rounded-lg transform transition-transform duration-300 hover:scale-110"
+                />
+                <p>Typescript</p>
+              </li>
+              <li className="text-center">
                 <FaHtml5 className="text-4xl mx-auto text-orange-500 transform transition-transform duration-300 hover:scale-110" />
                 <p>HTML5</p>
               </li>
@@ -135,6 +166,14 @@ const Skills = () => {
                 <p>Visual Studio</p>
               </li>
               <li className="text-center">
+                <img
+                  src={expressIcon}
+                  alt="Express"
+                  className="w-10 h-8 mx-auto transform transition-transform duration-300 hover:scale-110"
+                />
+                <p>Express</p>
+              </li>
+              <li className="text-center">
                 <FaLaravel className="text-4xl mx-auto text-red-700 transform transition-transform duration-300 hover:scale-110" />
                 <p>Laravel</p>
               </li>
@@ -179,6 +218,14 @@ const Skills = () => {
                 <FaChartLine className="text-4xl mx-auto transform transition-transform duration-300 hover:scale-110" />
                 <p>Logistic & Linear Regression</p>
               </li>
+              <li className="text-center">
+                <img
+                  src={cursorIcon}
+                  alt="Cursor"
+                  className="w-12 h-10 mx-auto transform transition-transform duration-300 hover:scale-110"
+                />
+                <p>Cursor AI</p>
+              </li>
             </ul>
           </div>
 
@@ -220,6 +267,22 @@ const Skills = () => {
                   className="w-12 h-12 mx-auto transform transition-transform duration-300 hover:scale-110"
                 />
                 <p>Oracle</p>
+              </li>
+              <li className="text-center">
+                <img
+                  src={postgresIcon}
+                  alt="PostgreSQL"
+                  className="w-8 h-8 mx-auto transform transition-transform duration-300 hover:scale-110"
+                />
+                <p>PostgreSQL</p>
+              </li>
+              <li className="text-center">
+                <img
+                  src={firebaseIcon}
+                  alt="Firebase"
+                  className="w-10 h-8 mx-auto transform transition-transform duration-300 hover:scale-110"
+                />
+                <p>Firebase</p>
               </li>
             </ul>
           </div>

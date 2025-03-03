@@ -1,54 +1,77 @@
-import React from 'react';
-import { useInView } from '../hooks/useInView';
+import React from "react";
+import { useInView } from "../hooks/useInView";
 
 const experiences = [
   {
     id: 1,
-    title: 'Final Year Project',
-    company: 'Shifa Tameer-e-Millat University',
-    date: 'November 2023 - August 2024 ',
-    description: 'Developed a comprehensive web-based solution that streamlines the management of academic resources, enhancing efficiency, transparency, and collaboration within educational institutions.',
-    technologies: ['HTML, CSS, JavaScript, PHP, MySQL']
+    title: "MERN Internship",
+    company: "DPL",
+    date: "February 2025 - Present ",
+    description:
+      "Learned MERN stack development to create a fully functional website.",
+    technologies: ["React, Node, Tailwind CSS, Express, PostgreSQL"],
+  },
+  {
+    id: 2,
+    title: "React Internship",
+    company: "VizTech Solutions",
+    date: "December 2024 - January 2025 ",
+    description:
+      "Learned react through various projects, including an E-learning platform and leads management system.",
+    technologies: ["React, Firebase, Tailwind CSS, Cursor AI, Bolt.new"],
   },
   {
     id: 3,
-    title: 'AI Software Engineer Intern',
-    company: 'Shifa International Hospital',
-    date: 'August 2023 - October 2023',
-    description: 'Helped create a demo AI software to convert speech to text to help in summarizing operation procedures.',
-    technologies: ['Python']
+    title: "Final Year Project",
+    company: "Shifa Tameer-e-Millat University",
+    date: "November 2023 - August 2024 ",
+    description:
+      "Developed a comprehensive web-based solution that streamlines the management of academic resources, enhancing efficiency, transparency, and collaboration within educational institutions.",
+    technologies: ["HTML, CSS, JavaScript, PHP, MySQL"],
   },
   {
     id: 4,
-    title: 'AI Semester Project',
-    company: 'Shifa Tameer-e-Millat University',
-    date: 'November 2023 - April 2024',
-    description: 'Created a project in which we can use various techniques like BFS, DFS, A* etc. to find the shortest path in a maze.',
-    technologies: ['Python']
+    title: "AI Software Engineer Intern",
+    company: "Shifa International Hospital",
+    date: "August 2023 - October 2023",
+    description:
+      "Helped create a demo AI software to convert speech to text to help in summarizing operation procedures.",
+    technologies: ["Python"],
   },
   {
     id: 5,
-    title: 'Web Developement Semester Project 1',
-    company: 'Shifa Tameer-e-Millat University',
-    date: 'March 2023 - July 2023',
-    description: 'Created a website for a pizza parlour using MERN stack.',
-    technologies: ['MongoDB, Express, React, Node']
+    title: "AI Semester Project",
+    company: "Shifa Tameer-e-Millat University",
+    date: "November 2023 - April 2024",
+    description:
+      "Created a project in which we can use various techniques like BFS, DFS, A* etc. to find the shortest path in a maze.",
+    technologies: ["Python"],
   },
   {
     id: 6,
-    title: 'Web Development Semester Project 2',
-    company: 'Shifa Tameer-e-Millat University',
-    date: 'November 2020 - April 2021',
-    description: 'Created a frontend for an online barber website, to allow barber appointments during COVID.',
-    technologies: ['HTML, CSS, JavaScript']
+    title: "Web Developement Semester Project 1",
+    company: "Shifa Tameer-e-Millat University",
+    date: "March 2023 - July 2023",
+    description: "Created a website for a pizza parlour using MERN stack.",
+    technologies: ["MongoDB, Express, React, Node"],
   },
   {
     id: 7,
-    title: 'Freelance Video Editor',
-    company: 'Elements Learning',
-    date: 'October 2020 - January 2021',
-    description: 'Edited educational videos with transcripts for an online learning system.',
-    technologies: ['Filmora']
+    title: "Web Development Semester Project 2",
+    company: "Shifa Tameer-e-Millat University",
+    date: "November 2020 - April 2021",
+    description:
+      "Created a frontend for an online barber website, to allow barber appointments during COVID.",
+    technologies: ["HTML, CSS, JavaScript"],
+  },
+  {
+    id: 8,
+    title: "Freelance Video Editor",
+    company: "Elements Learning",
+    date: "October 2020 - January 2021",
+    description:
+      "Edited educational videos with transcripts for an online learning system.",
+    technologies: ["Filmora"],
   },
 ];
 
@@ -110,8 +133,7 @@ const TimelineItem = ({ experience, isLeft }) => {
         </p>
       </div>
     </div>
-
-  );}
-
+  );
+};
 
 export default Experience;

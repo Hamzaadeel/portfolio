@@ -19,10 +19,10 @@ const Contact = () => {
     e.preventDefault();
     emailjs
       .send(
-        "service_mex5cto", // Replace with your EmailJS service ID
-        "template_0sqbxc7", // Replace with your EmailJS template ID
+        "service_mex5cto",
+        "template_0sqbxc7",
         formData,
-        "jvmn4T_paUuoBkXh4" // Replace with your EmailJS user ID
+        "jvmn4T_paUuoBkXh4"
       )
       .then(
         (response) => {
@@ -60,7 +60,10 @@ const Contact = () => {
           className="max-w-lg mx-auto bg-gray-100 shadow-md rounded-lg p-8"
         >
           <div className="mb-4">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Name
             </label>
             <input
@@ -75,7 +78,10 @@ const Contact = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Email
             </label>
             <input
@@ -90,7 +96,10 @@ const Contact = () => {
             />
           </div>
           <div className="mb-4">
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Message
             </label>
             <textarea
