@@ -9,7 +9,9 @@ const experiences = [
     date: "February 2025 - Present ",
     description:
       "Learned MERN stack development to create a fully functional website.",
-    technologies: ["React, Node, Tailwind CSS, Express, PostgreSQL"],
+    technologies: [
+      "React, Node, Tailwind CSS, Express, PostgreSQL, AWS, Redux",
+    ],
   },
   {
     id: 2,

@@ -5,6 +5,16 @@ import { VscChevronRight, VscChevronLeft } from "react-icons/vsc";
 
 const projects = [
   {
+    title: "PolarBear",
+    description:
+      "This application allows organizations to create challenges and engage employees in a gamified system.",
+    images: [
+      require("../assets/images/polarbear-moderator.png"),
+      require("../assets/images/polarbear-employee.png"),
+      require("../assets/images/polarbear-sidebar.png"),
+    ],
+  },
+  {
     title: "CLRMS - Course Learning Resource Management System",
     description:
       "CLRMS is a comprehensive web-based solution that streamlines the management of academic resources, enhancing efficiency, transparency, and collaboration within educational institutions.",
@@ -13,15 +23,6 @@ const projects = [
       require("../assets/images/clrms-services.png"),
       require("../assets/images/clrms-courses.png"),
       require("../assets/images/clrms-folder.png"),
-    ],
-  },
-  {
-    title: "E-Learning Platform",
-    description: "An online education platform like udemy, coursera etc.",
-    images: [
-      require("../assets/images/E-learning-landing.png"),
-      require("../assets/images/E-Learning-Courses.png"),
-      require("../assets/images/E-learning-content.png"),
     ],
   },
 ];

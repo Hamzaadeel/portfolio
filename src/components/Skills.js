@@ -18,6 +18,9 @@ import {
   FaPaintBrush,
   FaServer,
   FaFire,
+  FaAws,
+  FaGit,
+  FaGitAlt,
 } from "react-icons/fa"; // Import relevant react-icons
 import { FaMicrochip, FaPencil, FaSquareJs } from "react-icons/fa6";
 import mysqlIcon from "../assets/icons/mysql.png";
@@ -39,6 +42,7 @@ import postgresIcon from "../assets/icons/postgresql-icon.png";
 import typescriptIcon from "../assets/icons/typescript.png";
 import cursorIcon from "../assets/icons/cursor.jpeg";
 import firebaseIcon from "../assets/icons/firebase.png";
+import reduxIcon from "../assets/icons/redux.png";
 const Skills = () => {
   const [visibleSections, setVisibleSections] = useState({
     programming: false,
@@ -146,7 +150,7 @@ const Skills = () => {
           >
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">
               <FaLaptopCode className="inline-block mr-2" />
-              Tools & Frameworks
+              Tools, Frameworks & Technologies
             </h3>
             <ul className="grid grid-cols-3 gap-4">
               <li className="text-center">
@@ -184,6 +188,22 @@ const Skills = () => {
                   className="w-10 h-8 mx-auto transform transition-transform duration-300 hover:scale-110"
                 />
                 <p>Tailwind CSS</p>
+              </li>
+              <li className="text-center">
+                <img
+                  src={reduxIcon}
+                  alt="Redux"
+                  className="w-10 h-10 mx-auto transform transition-transform duration-300 hover:scale-110"
+                />
+                <p>Redux</p>
+              </li>
+              <li className="text-center">
+                <FaAws className="text-4xl mx-auto text-cyan-900 transform transition-transform duration-300 hover:scale-110" />
+                <p>AWS</p>
+              </li>
+              <li className="text-center">
+                <FaGitAlt className="text-4xl mx-auto text-red-500 transform transition-transform duration-300 hover:scale-110" />
+                <p>Git</p>
               </li>
             </ul>
           </div>

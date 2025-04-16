@@ -28,6 +28,9 @@ import eLearning2 from "../assets/images/E-learning-content.png";
 import leads from "../assets/images/leads-login.png";
 import leads1 from "../assets/images/leads-landing.png";
 import leads2 from "../assets/images/leads-filter.png";
+import polarbearThumbnail from "../assets/images/polarbear-moderator.png";
+import polarbear1 from "../assets/images/polarbear-employee.png";
+import polarbear2 from "../assets/images/polarbear-sidebar.png";
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
@@ -38,6 +41,27 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "PolarBear",
+      category: "Web Development",
+      description:
+        "This application allows organizations to create challenges and engage employees in a gamified system.",
+      details:
+        "The PolarBear project is a gamified platform designed to engage employees through organizational challenges. It allows organizations to register, manage employees, and create circles where moderators assign challenges to participants. Employees earn points by completing challenges, with progress tracked on a leaderboard. The application features role-based authentication, with moderators overseeing circles and challenges, while employees participate and submit completions. Built with a modern tech stack—Express.js, React, PostgreSQL, and AWS—the platform ensures scalability and secure file storage, deployed on AWS EC2 and S3 with CloudFront for efficient delivery.",
+
+      thumbnail: polarbearThumbnail,
+      images: [polarbearThumbnail, polarbear2, polarbear1],
+      technologies: [
+        "React TS",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Express",
+        "Node",
+        "Redux",
+        "AWS S3",
+      ],
+    },
+    {
+      id: 2,
       title: "CLRMS",
       category: "Web Development",
       description:
@@ -57,7 +81,7 @@ const Projects = () => {
       technologies: ["HTML", "CSS", "Javascript", "PHP", "MySql", "Bootstrap"],
     },
     {
-      id: 2,
+      id: 3,
       title: "E-Learning Platform",
       category: "Web Development",
       description: "An e-learning platform like Udemy and Coursera.",
@@ -68,7 +92,7 @@ const Projects = () => {
       technologies: ["React TS", "Tailwind CSS", "Firebase"],
     },
     {
-      id: 3,
+      id: 4,
       title: "Leads Maestro",
       category: "Web Development",
       description:
@@ -80,7 +104,7 @@ const Projects = () => {
       technologies: ["React TS", "Tailwind CSS", "Firebase"],
     },
     {
-      id: 4,
+      id: 5,
       title: "Ye Cheese - Pizza Delivery Website",
       category: "Web Development",
       description: "A front-end website in React JS for a local pizzeria.",
@@ -91,7 +115,7 @@ const Projects = () => {
       technologies: ["React JS", "MongoDB", "Node"],
     },
     {
-      id: 5,
+      id: 6,
       title: "The Online Barber",
       category: "Web Development",
       description:
@@ -103,7 +127,7 @@ const Projects = () => {
       technologies: ["HTML", "CSS", "JavaScript"],
     },
     {
-      id: 6,
+      id: 7,
       title: "Hands and Plants",
       category: "Design",
       description:
@@ -115,7 +139,7 @@ const Projects = () => {
       technologies: ["AdobeXD"],
     },
     {
-      id: 7,
+      id: 8,
       title: "Relojes - The Online Watch Store",
       category: "Design",
       description: "Design for an online watch store",
@@ -126,7 +150,7 @@ const Projects = () => {
       technologies: ["AdobeXD"],
     },
     {
-      id: 8,
+      id: 9,
       title: "Maze Solution Finder",
       category: "AI/ML",
       description: "Shortest path finder using algorithms like BFS, DFS, A*.",
@@ -137,7 +161,7 @@ const Projects = () => {
       technologies: ["Python", "Algorithms"],
     },
     {
-      id: 9,
+      id: 10,
       title: "Python Data Analysis",
       category: "Data Analysis",
       description: "Analyzed Google stock prices using Python libraries.",
