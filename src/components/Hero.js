@@ -41,7 +41,7 @@ const Hero = () => {
             </Link>
             {/* CV Preview Button */}
             <a
-              href="/Muhammad Hamza Adeel CV.pdf"
+              href="/Hamza Adeel Resume Full Stack Developer.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-black text-white px-4 py-3 rounded-full text-sm font-semibold shadow-xl hover:bg-white hover:text-black transition duration-300 ease-in-out transform hover:scale-105 animate-slide-in-right delay-400 flex items-center space-x-2 md:px-8 md:py-4 md:text-lg"
