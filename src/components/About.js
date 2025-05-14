@@ -77,10 +77,9 @@ const About = () => {
               Lifelong Learner
             </h3>
             <p>
-              I am driven by an insatiable curiosity to learn new things,
-              whether it’s mastering a new programming language or exploring the
-              latest advancements in technology. I firmly believe that
-              continuous learning is the key to growth.
+              I’m always eager to learn new things, whether it’s picking up a
+              new programming language or exploring the latest tech. I believe
+              that learning all the time is the key to growing and improving.
             </p>
           </div>
 

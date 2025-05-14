@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FaChartBar,
   FaLaptopCode,
   FaLayerGroup,
   FaPalette,
   FaRobot,
-} from "react-icons/fa"; // Import relevant react-icons
+  FaArrowLeft,
+  FaArrowRight,
+} from "react-icons/fa"; // Added arrow icons
 import { useInView } from "../hooks/useInView";
 import clrmsThumbnail from "../assets/images/clrms-landing.png";
 import barberImage from "../assets/images/barber-landing.png";
@@ -35,8 +37,47 @@ const Projects = () => {
   const [activeTab, setActiveTab] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const projectsPerPage = 6;
   const { ref, isVisible } = useInView({ threshold: 0.3 });
+
+  // Add useEffect for keyboard navigation and scroll prevention
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!isModalOpen) return;
+
+      if (e.key === "ArrowRight") {
+        setCurrentImageIndex((prev) =>
+          prev < selectedProject.images.length - 1 ? prev + 1 : prev
+        );
+      } else if (e.key === "ArrowLeft") {
+        setCurrentImageIndex((prev) => (prev > 0 ? prev - 1 : prev));
+      } else if (e.key === "Escape") {
+        closeModal();
+      }
+    };
+
+    const preventScroll = (e) => {
+      if (isModalOpen) {
+        e.preventDefault();
+      }
+    };
+
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+      window.addEventListener("wheel", preventScroll, { passive: false });
+      window.addEventListener("touchmove", preventScroll, { passive: false });
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("wheel", preventScroll);
+      window.removeEventListener("touchmove", preventScroll);
+    };
+  }, [isModalOpen, selectedProject, currentImageIndex]);
 
   const projects = [
     {
@@ -67,7 +108,7 @@ const Projects = () => {
       description:
         "A full-stack website for managing and maintaining course learning resources.",
       details:
-        "The Course Learning Resource Management System (CLRMS) is a comprehensive web-based software designed to streamline the management of learning resources within academic institutions. Offering a centralised platform, CLRMS facilitates efficient administration of course profiles, learner enrolment, and resource person allocation. Through its user-friendly interface, CLRMS empowers academic stakeholders with tools for course scheduling, prerequisite management, and data analysis, thereby enhancing the overall learning experience. In conclusion, the implementation of the CLRMS has led to significant improvements in managing academic resources. Our findings indicate that CLRMS not only streamlines administrative tasks but also promotes greater transparency and collaboration between faculty members and students. Additionally, the system’s capability to produce detailed reports and analytics supports informed decision-making, which in turn enhances both academic outcomes and overall institutional efficiency.",
+        "The Course Learning Resource Management System (CLRMS) is a comprehensive web-based software designed to streamline the management of learning resources within academic institutions. Offering a centralised platform, CLRMS facilitates efficient administration of course profiles, learner enrolment, and resource person allocation. Through its user-friendly interface, CLRMS empowers academic stakeholders with tools for course scheduling, prerequisite management, and data analysis, thereby enhancing the overall learning experience. In conclusion, the implementation of the CLRMS has led to significant improvements in managing academic resources. Our findings indicate that CLRMS not only streamlines administrative tasks but also promotes greater transparency and collaboration between faculty members and students. Additionally, the system's capability to produce detailed reports and analytics supports informed decision-making, which in turn enhances both academic outcomes and overall institutional efficiency.",
 
       thumbnail: clrmsThumbnail,
       images: [
@@ -107,9 +148,9 @@ const Projects = () => {
       id: 5,
       title: "Ye Cheese - Pizza Delivery Website",
       category: "Web Development",
-      description: "A front-end website in React JS for a local pizzeria.",
+      description: "A website in MERN for a local pizzeria.",
       details:
-        "A creative and user-friendly portfolio design with a focus on showcasing projects and skills effectively.",
+        "A local pizza ordering website built with the MERN stack, offering a seamless and responsive user experience.",
       thumbnail: mernPizza,
       images: [mernPizza],
       technologies: ["React JS", "MongoDB", "Node"],
@@ -119,9 +160,9 @@ const Projects = () => {
       title: "The Online Barber",
       category: "Web Development",
       description:
-        "A frontend application for an online barber appoinment booking website.",
+        "A frontend application for an online barber appointment booking website.",
       details:
-        "This application fetches real-time weather data using the OpenWeatherMap API and displays forecasts for multiple cities.",
+        "A frontend application for an online barber appointment booking website, built using HTML, CSS, and JavaScript. It features a clean and responsive design where users can browse services, select barbers, and schedule appointments with ease.",
       thumbnail: barberImage,
       images: [barberImage, barberImage1, barberImage2],
       technologies: ["HTML", "CSS", "JavaScript"],
@@ -133,7 +174,7 @@ const Projects = () => {
       description:
         "Design for a website where customers can buy plants online.",
       details:
-        "Processed and visualized datasets to uncover trends and actionable insights using Python libraries.",
+        "A website design for an online plant store created using Adobe XD. The layout features a modern, nature-inspired aesthetic with intuitive navigation, allowing users to browse plant categories, view detailed product pages, and add items to their cart. The design emphasizes user experience with clean visuals and a calming color palette.",
       thumbnail: plantImage,
       images: [plantImage],
       technologies: ["AdobeXD"],
@@ -144,7 +185,7 @@ const Projects = () => {
       category: "Design",
       description: "Design for an online watch store",
       details:
-        "Processed and visualized datasets to uncover trends and actionable insights using Python libraries.",
+        "A sleek and modern Adobe XD design for an online watch store. The interface showcases premium timepieces with high-quality visuals, organized categories, and an elegant layout. It focuses on a luxurious shopping experience with easy navigation, product highlights, and a stylish, minimalist aesthetic.",
       thumbnail: watchImage,
       images: [watchImage],
       technologies: ["AdobeXD"],
@@ -155,7 +196,7 @@ const Projects = () => {
       category: "AI/ML",
       description: "Shortest path finder using algorithms like BFS, DFS, A*.",
       details:
-        "Processed and visualized datasets to uncover trends and actionable insights using Python libraries.",
+        "A Python-based maze solver that finds the shortest path using algorithms like BFS, DFS, and A*. The program visualizes the search process and efficiently navigates through complex mazes to reach the goal.",
       thumbnail: mazeImage,
       images: [mazeImage],
       technologies: ["Python", "Algorithms"],
@@ -201,17 +242,25 @@ const Projects = () => {
     startIndex + projectsPerPage
   );
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // State to manage modal visibility
-  const [modalImage, setModalImage] = useState(null); // State to store the image for the modal
-
-  const openModal = (image) => {
-    setModalImage(image);
+  const openModal = (imageIndex) => {
+    setCurrentImageIndex(imageIndex);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setModalImage(null);
+    setCurrentImageIndex(0);
+  };
+
+  const navigateImage = (direction) => {
+    if (
+      direction === "next" &&
+      currentImageIndex < selectedProject.images.length - 1
+    ) {
+      setCurrentImageIndex((prev) => prev + 1);
+    } else if (direction === "prev" && currentImageIndex > 0) {
+      setCurrentImageIndex((prev) => prev - 1);
+    }
   };
 
   const handleNextPage = () => {
@@ -291,7 +340,7 @@ const Projects = () => {
                     src={image}
                     alt={`${selectedProject.title} Image ${index + 1}`}
                     className="w-full h-56 object-cover rounded-lg border-2 transform transition-transform duration-300 hover:scale-105 cursor-pointer"
-                    onClick={() => openModal(image)} // Open modal on click
+                    onClick={() => openModal(index)}
                   />
                 </div>
               ))}
@@ -300,24 +349,48 @@ const Projects = () => {
             {/* Modal */}
             {isModalOpen && (
               <div
-                className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-                onClick={closeModal} // Close modal when clicking on the overlay
+                className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50"
+                onClick={closeModal}
               >
                 <div
-                  className="bg-white rounded-lg overflow-hidden max-w-3xl w-full p-4 relative"
-                  onClick={(e) => e.stopPropagation()} // Prevent modal close on content click
+                  className="relative max-w-4xl w-full mx-4"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <button
-                    className="absolute text-2xl font-bold top-2 right-2 text-gray-500 hover:text-gray-700"
+                    className="absolute top-4 right-4 text-white text-2xl font-bold hover:text-gray-300 z-50"
                     onClick={closeModal}
                   >
                     &times;
                   </button>
+
+                  {/* Navigation Arrows */}
+                  {currentImageIndex > 0 && (
+                    <button
+                      className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-gray-300 z-50"
+                      onClick={() => navigateImage("prev")}
+                    >
+                      <FaArrowLeft />
+                    </button>
+                  )}
+                  {currentImageIndex < selectedProject.images.length - 1 && (
+                    <button
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white text-3xl hover:text-gray-300 z-50"
+                      onClick={() => navigateImage("next")}
+                    >
+                      <FaArrowRight />
+                    </button>
+                  )}
+
                   <img
-                    src={modalImage}
-                    alt="Modal View"
-                    className="w-full h-auto rounded-lg"
+                    src={selectedProject.images[currentImageIndex]}
+                    alt={`${selectedProject.title} Modal View`}
+                    className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
                   />
+
+                  {/* Image counter */}
+                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white">
+                    {currentImageIndex + 1} / {selectedProject.images.length}
+                  </div>
                 </div>
               </div>
             )}
