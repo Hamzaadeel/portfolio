@@ -15,14 +15,14 @@ const projects = [
     ],
   },
   {
-    title: "CLRMS - Course Learning Resource Management System",
+    title: "DevQuest",
     description:
-      "CLRMS is a comprehensive web-based solution that streamlines the management of academic resources, enhancing efficiency, transparency, and collaboration within educational institutions.",
+      "DevQuest is a frontend-only web application built with Next.js, Tailwind CSS, and TypeScript, designed to help users prepare for web development interviews.",
     images: [
-      require("../assets/images/clrms-landing.png"),
-      require("../assets/images/clrms-services.png"),
-      require("../assets/images/clrms-courses.png"),
-      require("../assets/images/clrms-folder.png"),
+      require("../assets/images/devquest-landing.png"),
+      require("../assets/images/devquest-about1.png"),
+      require("../assets/images/devquest-topics.png"),
+      require("../assets/images/devquest-flashcards.png"),
     ],
   },
 ];

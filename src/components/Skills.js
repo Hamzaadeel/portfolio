@@ -43,6 +43,7 @@ import typescriptIcon from "../assets/icons/typescript.png";
 import cursorIcon from "../assets/icons/cursor.jpeg";
 import firebaseIcon from "../assets/icons/firebase.png";
 import reduxIcon from "../assets/icons/redux.png";
+import nextIcon from "../assets/icons/next.png";
 const Skills = () => {
   const [visibleSections, setVisibleSections] = useState({
     programming: false,
@@ -160,6 +161,14 @@ const Skills = () => {
               <li className="text-center">
                 <FaNodeJs className="text-4xl mx-auto text-lime-500 transform transition-transform duration-300 hover:scale-110" />
                 <p>Node.js</p>
+              </li>
+              <li className="text-center">
+                <img
+                  src={nextIcon}
+                  alt="Next"
+                  className="w-16 h-10 mx-auto transform transition-transform duration-300 hover:scale-110"
+                />
+                <p>Next JS</p>
               </li>
               <li className="text-center">
                 <img

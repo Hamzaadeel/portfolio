@@ -33,6 +33,18 @@ import leads2 from "../assets/images/leads-filter.png";
 import polarbearThumbnail from "../assets/images/polarbear-moderator.png";
 import polarbear1 from "../assets/images/polarbear-employee.png";
 import polarbear2 from "../assets/images/polarbear-sidebar.png";
+import devQuestLanding from "../assets/images/devquest-landing.png";
+import devQuestAbout1 from "../assets/images/devquest-about1.png";
+import devQuestAbout2 from "../assets/images/devquest-about2.png";
+import devQuestAbout3 from "../assets/images/devquest-about3.png";
+import devQuestContact from "../assets/images/devquest-contact.png";
+import devQuestTopics from "../assets/images/devquest-topics.png";
+import devQuestFlashcards from "../assets/images/devquest-flashcards.png";
+import devQuestCheatsheet1 from "../assets/images/devquest-cheatsheet1.png";
+import devQuestCheatsheets from "../assets/images/devquest-cheatsheets.png";
+import devQuestServices from "../assets/images/devquest-services.png";
+import devQuestRoadmap from "../assets/images/devquest-roadmap.png";
+import devQuestFaq from "../assets/images/devquest-faq.png";
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
@@ -82,6 +94,31 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "DevQuest",
+      category: "Web Development",
+      description:
+        "A Next JS website designed to help with web development interview preparation.",
+      details:
+        "DevQuest is a frontend-only web application built with Next.js, Tailwind CSS, and TypeScript, designed to help users prepare for web development interviews. It provides curated, static content including flashcards, cheat sheets, multiple-choice questions (MCQs), and coding examples covering topics like HTML, CSS, JavaScript, and full-stack technologies such as MERN and PERN. With no user authentication or backend, DevQuest offers a fast, accessible, and beginner-friendly resource for interview preparation.",
+      thumbnail: devQuestLanding,
+      images: [
+        devQuestLanding,
+        devQuestAbout1,
+        devQuestAbout2,
+        devQuestAbout3,
+        devQuestContact,
+        devQuestTopics,
+        devQuestFlashcards,
+        devQuestCheatsheet1,
+        devQuestCheatsheets,
+        devQuestRoadmap,
+        devQuestServices,
+        devQuestFaq,
+      ],
+      technologies: ["Next JS", "Tailwind CSS", "Typescript", "Framer-Motion"],
+    },
+    {
+      id: 2,
       title: "PolarBear",
       category: "Web Development",
       description:
@@ -102,7 +139,7 @@ const Projects = () => {
       ],
     },
     {
-      id: 2,
+      id: 3,
       title: "CLRMS",
       category: "Web Development",
       description:
@@ -122,7 +159,7 @@ const Projects = () => {
       technologies: ["HTML", "CSS", "Javascript", "PHP", "MySql", "Bootstrap"],
     },
     {
-      id: 3,
+      id: 4,
       title: "E-Learning Platform",
       category: "Web Development",
       description: "An e-learning platform like Udemy and Coursera.",
@@ -133,7 +170,7 @@ const Projects = () => {
       technologies: ["React TS", "Tailwind CSS", "Firebase"],
     },
     {
-      id: 4,
+      id: 5,
       title: "Leads Maestro",
       category: "Web Development",
       description:
@@ -145,7 +182,7 @@ const Projects = () => {
       technologies: ["React TS", "Tailwind CSS", "Firebase"],
     },
     {
-      id: 5,
+      id: 6,
       title: "Ye Cheese - Pizza Delivery Website",
       category: "Web Development",
       description: "A website in MERN for a local pizzeria.",
@@ -156,7 +193,7 @@ const Projects = () => {
       technologies: ["React JS", "MongoDB", "Node"],
     },
     {
-      id: 6,
+      id: 7,
       title: "The Online Barber",
       category: "Web Development",
       description:
@@ -168,7 +205,7 @@ const Projects = () => {
       technologies: ["HTML", "CSS", "JavaScript"],
     },
     {
-      id: 7,
+      id: 8,
       title: "Hands and Plants",
       category: "Design",
       description:
@@ -180,7 +217,7 @@ const Projects = () => {
       technologies: ["AdobeXD"],
     },
     {
-      id: 8,
+      id: 9,
       title: "Relojes - The Online Watch Store",
       category: "Design",
       description: "Design for an online watch store",
@@ -191,7 +228,7 @@ const Projects = () => {
       technologies: ["AdobeXD"],
     },
     {
-      id: 9,
+      id: 10,
       title: "Maze Solution Finder",
       category: "AI/ML",
       description: "Shortest path finder using algorithms like BFS, DFS, A*.",
@@ -202,7 +239,7 @@ const Projects = () => {
       technologies: ["Python", "Algorithms"],
     },
     {
-      id: 10,
+      id: 11,
       title: "Python Data Analysis",
       category: "Data Analysis",
       description: "Analyzed Google stock prices using Python libraries.",
