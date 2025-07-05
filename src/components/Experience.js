@@ -6,7 +6,7 @@ const experiences = [
     id: 1,
     title: "MERN Internship",
     company: "DPL",
-    date: "February 2025 - Present ",
+    date: "February 2025 - May 2025 ",
     description:
       "Learned MERN stack development to create a fully functional website.",
     technologies: [
@@ -79,15 +79,18 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 bg-slate-800 text-gray-800">
+    <section id="experience" className="py-20 bg-slate-800 text-gray-800 px-4">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl text-center mb-6 text-gray-200 border-4 border-gray-400 shadow-md px-6 py-4 font-sans inline-block mx-auto">
+        <h2 className="text-2xl sm:text-3xl text-center mb-6 text-gray-200 border-4 border-gray-400 shadow-md px-4 sm:px-6 py-4 font-sans inline-block mx-auto">
           Journey of Growth
-          <span className="text-lg text-gray-400 ml-2 italic">so far</span>
+          <span className="text-base sm:text-lg text-gray-400 ml-2 italic">
+            so far
+          </span>
         </h2>
         <div className="relative">
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-300"></div>
-          <div className="space-y-12">
+          {/* Timeline line - hidden on mobile, visible on desktop */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-300"></div>
+          <div className="space-y-8 md:space-y-12">
             {experiences.map((experience, index) => (
               <TimelineItem
                 key={experience.id}
@@ -112,25 +115,27 @@ const TimelineItem = ({ experience, isLeft }) => {
         isLeft ? "justify-start" : "justify-end"
       }`}
     >
-      {/* Dot */}
+      {/* Dot - visible on all screen sizes */}
       <div
-        className={`timeline-dot w-4 h-4 bg-blue-400 rounded-full absolute ${
+        className={`timeline-dot w-3 h-3 sm:w-4 sm:h-4 bg-blue-400 rounded-full absolute ${
           isLeft ? "left-1/2 -translate-x-full" : "left-1/2 translate-x-full"
         }`}
       ></div>
       {/* Content */}
       <div
-        className={`timeline-content bg-gray-100 cursor-pointer mx-36 p-6 rounded-lg shadow-lg max-w-sm ${
+        className={`timeline-content bg-gray-100 cursor-pointer mx-4 sm:mx-8 md:mx-36 p-4 sm:p-6 rounded-lg shadow-lg max-w-xs sm:max-w-sm ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         } transition-all duration-700 ease-in-out ${
           isLeft ? "mr-auto" : "ml-auto"
-        } transform transition-transform duration-300 hover:scale-110`}
+        } transform transition-transform duration-300 hover:scale-105`}
       >
-        <h3 className="text-xl font-bold">{experience.title}</h3>
-        <p className="text-sm text-gray-500">{experience.company}</p>
-        <p className="text-sm text-gray-400">{experience.date}</p>
-        <p className="mt-2 text-gray-600">{experience.description}</p>
-        <p className="mt-1 text-sm text-gray-500 italic font-bold">
+        <h3 className="text-lg sm:text-xl font-bold">{experience.title}</h3>
+        <p className="text-xs sm:text-sm text-gray-500">{experience.company}</p>
+        <p className="text-xs sm:text-sm text-gray-400">{experience.date}</p>
+        <p className="mt-2 text-sm sm:text-base text-gray-600">
+          {experience.description}
+        </p>
+        <p className="mt-1 text-xs sm:text-sm text-gray-500 italic font-bold">
           {experience.technologies}
         </p>
       </div>

@@ -66,9 +66,9 @@ export default function Highlights() {
   };
 
   return (
-    <div className="highlights-section py-12 bg-slate-800 text-center">
+    <div className="highlights-section py-12 bg-slate-800 text-center px-4">
       {/* Always visible heading */}
-      <h2 className="text-3xl text-center mb-6 text-gray-200 border-4 border-gray-400 shadow-md px-6 py-4 font-sans inline-block mx-auto">
+      <h2 className="text-2xl sm:text-3xl text-center mb-6 text-gray-200 border-4 border-gray-400 shadow-md px-4 sm:px-6 py-4 font-sans inline-block mx-auto">
         The Hustle Blueprint
       </h2>
 
@@ -81,7 +81,7 @@ export default function Highlights() {
         className="carousel-container relative max-w-4xl mx-auto"
       >
         <div className="project-carousel">
-          <h3 className="text-xl font-semibold text-center mb-4 text-gray-300">
+          <h3 className="text-lg sm:text-xl font-semibold text-center mb-4 text-gray-300">
             {currentProject.title}
           </h3>
           <div className="aspect-video w-full rounded-md bg-slate-800 relative overflow-hidden">
@@ -91,14 +91,14 @@ export default function Highlights() {
                 alt={`Image ${currentImageIndex + 1} of ${
                   currentProject.title
                 }`}
-                className="w-auto h-auto object-cover rounded-md"
+                className="w-full h-full object-cover rounded-md"
               />
             ) : (
               <p className="text-center text-gray-400">
                 No images available for this project.
               </p>
             )}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+            <div className="absolute bottom-2 sm:bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
               {currentProject.images.map((_, index) => (
                 <button
                   key={index}
@@ -112,7 +112,7 @@ export default function Highlights() {
               ))}
             </div>
           </div>
-          <p className="text-gray-400 text-center mt-4">
+          <p className="text-gray-400 text-center mt-4 text-sm sm:text-base px-4">
             {currentProject.description}
           </p>
         </div>
@@ -120,18 +120,18 @@ export default function Highlights() {
           <button
             onClick={handlePrevProject}
             title="Previous Project"
-            className="px-4 py-2 bg-slate-800 rounded-md hover:bg-slate-800"
+            className="px-3 sm:px-4 py-2 bg-slate-800 rounded-md hover:bg-slate-800"
             aria-label="Previous Project"
           >
-            <VscChevronLeft className="text-2xl hover:scale-150 text-gray-200" />
+            <VscChevronLeft className="text-xl sm:text-2xl hover:scale-150 text-gray-200" />
           </button>
           <button
             onClick={handleNextProject}
             title="Next Project"
-            className="px-4 py-2 bg-slate-800 rounded-md hover:bg-slate-800"
+            className="px-3 sm:px-4 py-2 bg-slate-800 rounded-md hover:bg-slate-800"
             aria-label="Next Project"
           >
-            <VscChevronRight className="text-2xl hover:scale-150 text-gray-200" />
+            <VscChevronRight className="text-xl sm:text-2xl hover:scale-150 text-gray-200" />
           </button>
         </div>
       </motion.div>
